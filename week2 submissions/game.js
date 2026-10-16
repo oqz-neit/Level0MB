@@ -5,5 +5,7 @@ timer = setInterval(animate, 1000/60);
 
 function animate(){
     context.clearRect(0, 0, canvas.width, canvas.height);
+    ball.x += ball.vx;
     ball.draw();
+
 }
