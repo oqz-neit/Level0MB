@@ -23,8 +23,7 @@ function animate(){
     context.clearRect(0, 0, canvas.width, canvas.height);
     ball.x += ball.vx;
     ball.y += ball.vy;
-    //image colliions mechanic
-    //call interval within if statements and then the image collisions and frame time the image is applied on screen. 
+    
     
 if(ball.x >= canvas.width){
     ball.x -= 0;
