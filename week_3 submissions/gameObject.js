@@ -1,10 +1,13 @@
 function GameObject()
 {   
-    this.x = 10;
+    this.x = -15;
     this.y = 330;
     this.width = 30;
     this.height = 150;
     this.color = "purple"; 
+
+    this.vx = 0;
+    this.vy = 0;
 
      this.drawRect = function()
     {
@@ -26,6 +29,27 @@ function GameObject()
         context.restore();
     }
 
+    this.move = function()
+    {
+        this.x += this.vx; 
+        this.y += this.vy; 
+    }
+    this.left = function()
+    {
+        return this.x - width/2;
 
+    }
+    this.right = function()
+    {
+        return this.y - this.height/2;
+    }
+    this.top = function()
+    {
+        return this.y - this.height/2
+    }
+    this.bottom = function()
+    {
+        return this.y + this.height/2;
+    }
 
 }
