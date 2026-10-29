@@ -16,6 +16,41 @@ this.draw = function(){
     context.fillStyle = this.color;
     context.fill();
 }
+
+     this.move = function()
+    {
+        this.x += this.vx; 
+        this.y += this.vy; 
+    }
+    this.left = function()
+    {
+        return this.x - this.width/2;
+
+    }
+    this.right = function()
+    {
+        return this.y - this.height/2;
+    }
+    this.top = function()
+    {
+        return this.y - this.height/2
+    }
+    this.bottom = function()
+    {
+        return this.y + this.height/2;
+    }
+   
+    this.hitTestObject = function(obj2)
+    {
+        if(this.left() > obj2.right()&&
+           this.right() < obj2.left()&&
+           this.top() > obj2.bottom()&&
+            this.bottom() < obj2.top())
+            {
+                return true;
+            }
+            return false;
+    } 
 }
 
 

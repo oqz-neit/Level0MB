@@ -15,12 +15,12 @@ function animate()
     if(w)
     {   
         console.log("moving up");
-        player1.y -= 2;
+        player1.y -= 4;
     }
     if(s)
         {
             console.log("moving down");
-        player1.y += 2;
+        player1.y += 4;
         }
     
         //borders
@@ -34,7 +34,7 @@ function animate()
         }       
     
 
-    player1.drawRect();
+   
 
     //ball
      ball.x += ball.vx;
@@ -64,5 +64,26 @@ function animate()
     
     }
 
-    ball.draw();
+
+    //collision & bounding box,
+    if(ball.hitTestObject(player1))
+    {
+        //change color on contact
+        player1.color = "red";
+        
+    }else{
+        player1.color = "purple";
+    }
+    if(player1.hitTestObject(ball))
+        {
+            ball.color = "green";
+        }else{
+            ball.color = "blue"
+        }
+
+
+
+
+     player1.drawRect();
+     ball.draw();
 }
