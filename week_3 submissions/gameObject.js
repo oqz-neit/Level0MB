@@ -36,20 +36,20 @@ function GameObject()
     }
     this.left = function()
     {
-        return this.x - this.width/2;
+        return this.x;
 
     }
     this.right = function()
     {
-        return this.y - this.height/2;
+        return this.x = + this.width;
     }
     this.top = function()
     {
-        return this.y - this.height/2
+        return this.y;
     }
     this.bottom = function()
     {
-        return this.y + this.height/2;
+        return this.y + this.height;
     }
     //bounding box
     this.hitTestObject = function(obj)

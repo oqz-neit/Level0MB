@@ -70,16 +70,16 @@ function animate()
     {
         //change color on contact
         player1.color = "red";
+        ball.color = "green";
+
+        //bounce send the ball to the right
+        ball.vx = Math.abs(ball.vx);
+        ball.x = player1.right() + ball.radius;
         
     }else{
         player1.color = "purple";
+        ball.color = "blue";
     }
-    if(player1.hitTestObject(ball))
-        {
-            ball.color = "green";
-        }else{
-            ball.color = "blue"
-        }
 
 
 

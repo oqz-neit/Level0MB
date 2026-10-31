@@ -24,28 +24,28 @@ this.draw = function(){
     }
     this.left = function()
     {
-        return this.x - this.width/2;
+        return this.x - this.radius;
 
     }
     this.right = function()
     {
-        return this.y - this.height/2;
+        return this.x + this.radius;
     }
     this.top = function()
     {
-        return this.y - this.height/2
+        return this.y - this.radius;
     }
     this.bottom = function()
     {
-        return this.y + this.height/2;
+        return this.y + this.radius;
     }
    
     this.hitTestObject = function(obj2)
     {
-        if(this.left() > obj2.right()&&
-           this.right() < obj2.left()&&
-           this.top() > obj2.bottom()&&
-            this.bottom() < obj2.top())
+        if(this.left() < obj2.right()&&
+           this.right() > obj2.left()&&
+           this.top() < obj2.bottom()&&
+            this.bottom() > obj2.top())
             {
                 return true;
             }
