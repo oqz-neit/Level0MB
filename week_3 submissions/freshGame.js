@@ -111,11 +111,6 @@ function animate()
    {
     resetBall();
    }
-
-  
-   
-
-  
 }
  function resetBall()
    {
