@@ -1,8 +1,10 @@
 canvas = document.getElementById("myCanvas");
 context = canvas.getContext("2d");
-
+//paddle and pong intializtion   
 var player1 = new GameObject();
 var ball = new Ball();
+//paddle height & pos
+var third = player1.height/3;
 
 var interval = 1000/60;
 
@@ -72,9 +74,29 @@ function animate()
         player1.color = "red";
         ball.color = "green";
 
+        var collPos = ball.y - player1.y;
+
+        if(collPos < third)
+        {   //top third paddle collison 
+            ball.vx =  ball.force;
+            ball.vy = -ball.force;
+       
+        } else if(collPos > third * 2)
+        {    //bottom third paddle collision 
+            ball.vx = ball.force;
+            ball.vy = ball.force;
+        
+        } else 
+            { //middle third paddle collision 
+                ball.vx = ball.force;
+                ball.vy = 0;
+            }
+
+
+
         //bounce send the ball to the right
-        ball.vx = Math.abs(ball.vx);
         ball.x = player1.right() + ball.radius;
+    
         
     }else{
         player1.color = "purple";
@@ -91,6 +113,9 @@ function animate()
    }
 
   
+   
+
+  
 }
  function resetBall()
    {
@@ -98,6 +123,7 @@ function animate()
     
    ball.x = canvas.width / 2;
    ball.y = canvas.height / 2;
-   ball.vx = -Math.abs(ball.vx)
+   ball.vx = -ball.force;
+   ball.vy = 0;
    
    }
