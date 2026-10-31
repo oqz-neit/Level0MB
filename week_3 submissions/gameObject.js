@@ -41,7 +41,7 @@ function GameObject()
     }
     this.right = function()
     {
-        return this.x = + this.width;
+        return this.x + this.width;
     }
     this.top = function()
     {

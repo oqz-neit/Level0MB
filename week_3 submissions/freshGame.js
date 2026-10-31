@@ -36,27 +36,27 @@ function animate()
 
    
 
-    //ball
+    //ball movement
      ball.x += ball.vx;
     ball.y += ball.vy;
     
-    
+    //right
     if(ball.x >= canvas.width){
     ball.x -= 0;
     ball.vx = -ball.vx;
     
     }
-    if(ball.x <= 0){
-    ball.x = 0;
-    ball.vx = -ball.vx;
-    }
-    
+
+    //left
+
+    //bottom
     if(ball.y >= canvas.height){
     ball.y -= 0;
     ball.vy = -ball.vy;
     
     
     }
+    //top
     if(ball.y <= 0){
     ball.y = 0;
     ball.vy = -ball.vy;
@@ -80,10 +80,24 @@ function animate()
         player1.color = "purple";
         ball.color = "blue";
     }
-
-
-
+    
 
      player1.drawRect();
      ball.draw();
+     //lose condition 
+   if(ball.right() < 0)
+   {
+    resetBall();
+   }
+
+  
 }
+ function resetBall()
+   {
+    //sends ball to the paddle
+    
+   ball.x = canvas.width / 2;
+   ball.y = canvas.height / 2;
+   ball.vx = -Math.abs(ball.vx)
+   
+   }
