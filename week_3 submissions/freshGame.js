@@ -83,7 +83,7 @@ function animate()
     }
 
 
-    //collision & bounding box (player1 and ball,
+    //collision & bounding box (player1 and bal)
     if(ball.hitTestObject(player1))
     {
         //change color on contact
