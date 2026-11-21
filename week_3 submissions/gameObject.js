@@ -61,7 +61,10 @@ function GameObject()
             {
                 return true;
             }
+            else
+                {
             return false;
+            }
     } 
 
 }
