@@ -7,6 +7,9 @@ var ball = new Ball();
 //paddle height & pos
 var third = player1.height/3;
 var third2 = player2.height/3;
+//score
+var player1Score = 0;
+var player2Score = 0;
 
 var interval = 1000/60;
 
@@ -160,10 +163,20 @@ function animate()
      player1.drawRect();
      ball.draw();
      //lose condition 
-   if(ball.right() < 0 || ball.left() > canvas.width)
+   if(ball.right() < 0)
    {
     resetBall();
+    player2Score += 1;
+    console.log("Player 2 Score: " + player2Score);
    }
+    if(ball.left() > canvas.width)
+     {
+        resetBall();
+        player1Score += 1;
+        console.log("Player 1 Score: " + player1Score);
+     }
+     context.fillText("Player 1 Score: " + player1Score, 100, 100);
+     context.fillText("Player 2 Score: " + player2Score, 800, 100);
 }
  function resetBall()
    {
