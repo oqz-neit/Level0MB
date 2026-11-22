@@ -18,6 +18,18 @@ timer = setInterval(animate, interval);
 function animate()
 {
     context.clearRect(0, 0, canvas.width, canvas.height);
+    //net
+    context.save();
+    context.strokeStyle = "black";
+    context.beginPath();
+    context.moveTo(canvas.width/2, canvas.height/2+400);
+    context.lineTo(canvas.width/2, canvas.height/2-400);
+    context.closePath();
+    context.lineWidth = 5;
+    context.stroke();
+    context.restore();
+    
+    
     //PLAYER 1 
     if(w)
     {   
