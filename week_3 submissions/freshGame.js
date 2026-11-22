@@ -1,5 +1,7 @@
 canvas = document.getElementById("myCanvas");
 context = canvas.getContext("2d");
+var img = new Image();
+img.src = "flair-ball.png";
 //paddle and pong intializtion   
 var player1 = new GameObject();
 var player2 = new GameObjectTwo();
@@ -28,6 +30,7 @@ function animate()
     context.lineWidth = 5;
     context.stroke();
     context.restore();
+    
     
     
     //PLAYER 1 
@@ -173,7 +176,7 @@ function animate()
     
      player2.drawRectTwo();
      player1.drawRect();
-     ball.draw();
+     context.drawImage(img, ball.x - ball.radius, ball.y - ball.radius, ball.radius * 2, ball.radius * 2);
      //lose condition 
    if(ball.right() < 0)
    {
